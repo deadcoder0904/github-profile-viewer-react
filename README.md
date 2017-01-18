@@ -1,6 +1,10 @@
 # github-profile-viewer-react
 
-> View your Github Profile :heart_eyes:
+> View any users Github Profile :heart_eyes:
+
+# Screenshot
+
+![github-profile-viewer-react](http://imgur.com/SGhLR5N.png)
 
 ## License
 
