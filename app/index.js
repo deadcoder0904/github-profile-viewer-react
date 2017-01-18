@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import DisplayGithubProfile from './display'
 import Form from './form'
-// import emojify from 'emojify.js'
 import PRIVATE from './private'
 
 class GithubProfileViewer extends Component {
@@ -19,17 +18,12 @@ class GithubProfileViewer extends Component {
 		this.getGithubProfileInfo = this.getGithubProfileInfo.bind(this)
 	}
 
-	componentDidMount() {
-		// emojify.run();
-	}
-
 	getGithubProfileInfo(username) {
 		return fetch(`https://api.github.com/users/${username}?client_id=${PRIVATE.CLIENT_ID}&client_secret=${PRIVATE.CLIENT_SECRET}`)
 	}
 
 	handleChange(e) {
 		const username = e.target.value.trim()
-		console.log(username)
 		this.setState({ username,loading: true })
 		this.getGithubProfileInfo(username)
 			.then(res => res.json())
@@ -72,17 +66,3 @@ class GithubProfileViewer extends Component {
 }
 
 ReactDOM.render(<GithubProfileViewer />, document.getElementById('app'));
-
-/*
-user: {
-				avatar_url,
-				bio,
-				public_repos,
-				public_gists,
-				followers,
-				following,
-				blog,
-				location
-			}
-
- */
